@@ -1,19 +1,25 @@
-# PROG38263_Assignment2
+Secure Software Assignment 2
+-----------------------------
 Matthew Souter & Manraj Kang
 
-Secure Software Assignment 2
 
 Account credential Information
-=======================
+Admin account
+username: admin
+Password: testing321
 
+User account
+username: newuser
+Password:testing321
+
+username: newuser2
+Password:testing321
 
 commands to ensure our project works properly:
 pip install django-crispy-forms
 Pip install pillow
 pip install django-bootstrap-static
 Pip install django-sslserver
-
-We had some difficulties with some of the functionality aspects of this assignment however we did implement a good chunk.
 
 Administrator:
 Our project includes 3 tiers of users, Administrators, Users, and visitors. All of the users can list and view public posts. Admins can list, create, edit, update and delete users. The admin interface is not accessible by the user and visitors tiers. Admins can log in from an admin portal by accessing the “/admins” page in the url link. Admins can also view and list all of the posts on the site, however they are not able to edit or modify any of the posts at all. Admins also do have an option to logout when they are done using the system.
@@ -35,4 +41,5 @@ We include the different versions that we created throughout this assignment. Th
 Our code includes documentation/comments where necessary.
 We have the ability to revert changes by accessing the older version on Github.
 
+We had some difficulties with some of the functionality aspects of this assignment however we did implement a good chunk.
 Thank you for using our application. We hope you enjoy.
