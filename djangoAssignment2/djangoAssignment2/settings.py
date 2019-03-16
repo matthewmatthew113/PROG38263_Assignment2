@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#Default apps, including apps for form submissions, configurations and ssl server support
 INSTALLED_APPS = [
 	'blog.apps.BlogConfig', #added this app for the blog
 	'users.apps.UsersConfig', #added this app for the user creation
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'sslserver',
 ]
 
 MIDDLEWARE = [
@@ -124,5 +126,14 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+#Defines redirect url, and login page url
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+#Configurations for communication with SMTP server in order to send password reset email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'testsmtp98@gmail.com'
+EMAIL_HOST_PASSWORD = '1998sheridan'

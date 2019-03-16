@@ -1,5 +1,7 @@
+<!--Extends Base.HTML and crispy forms-->
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
+<!--Basic Login Form which allows users to login to their respective accounts-->
 {% block content %}
     <div class="content-section">
         <form method="POST">
@@ -14,7 +16,11 @@
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Need An Account? <a class="ml-2" href="{% url 'register' }">Sign Up Now</a>
+                Need An Account? <a class="ml-2" href="/register">Sign Up Now</a>
+            </small>
+			<br>
+			<small class="text-muted">
+                Forgot Your Password? <a class="ml-2" href="/reset_password">Reset Your Password</a>
             </small>
         </div>
     </div>

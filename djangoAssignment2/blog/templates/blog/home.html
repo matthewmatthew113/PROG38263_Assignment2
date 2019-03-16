@@ -1,5 +1,7 @@
+<!--Extends Base.HTML-->
 {% extends "blog/base.html" %}
 {% block content %}
+<!--Post listings are listed using a for loop which loops through all posts-->
     {% for post in posts %}
         <article class="media content-section">
           <div class="media-body">
@@ -7,31 +9,20 @@
               <a class="mr-2" href="#">{{ post.author }}</a>
               <small class="text-muted">{{ post.date_posted }}</small>
             </div>
-            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>
           </div>
         </article>
     {% endfor %}
+<!--If the page is paginated the page will generate a pagination buttons for the previous or next pages-->
+	{% if is_paginated %}
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+	{% endif %}
 {% endblock content %}
-
-
-
-
-
-<!--
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-
-</head>
-
-<body>
-  
-</body>
-</html>
-
-
--->

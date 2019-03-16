@@ -1,5 +1,20 @@
+<!--Extends Base.HTML and initalizes crispy_forms-->
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
+<!--HTML Form for editing and updating the user's profile-->
 {% block content %}
-	<h1>{{ user.username }}</h1>
+	<div class="content-section">
+	<form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ u_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update Profile</button>
+          </div>
+		  <small class="text-muted">
+               Want To Change Your Password? <a class="ml-2" href="/reset_password">Reset Your Password</a>
+           </small>
+	</div>
 {% endblock content %}
