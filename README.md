@@ -15,6 +15,15 @@ Password:testing321
 username: newuser2
 Password:testing321
 
+To run the server, open a command line and cd to the project directory with manage.py in it.
+Ensure that all migration are up to date so the database has the proper information in it with the following commands
+python manage.py makemigrations
+python manage.py migrate
+After this, start the server by typing in: python manage.py runsslserver
+
+The application should be up on the url below.
+https://127.0.0.1:8000/
+
 commands to ensure our project works properly:
 pip install django-crispy-forms
 Pip install pillow
